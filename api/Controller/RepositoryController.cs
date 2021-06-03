@@ -17,7 +17,7 @@ namespace challenge.Controller
     public class RepositoryController : ControllerBase
     {
   
-        public async Task<List<Repository>> Get()
+        public async Task<String> Get()
         {
     
             return await DataService.ProcessRepositories();
