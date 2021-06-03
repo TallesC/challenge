@@ -1,15 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Net;
-using System.Net.Http;
-using challenge.Models;
 using challenge.Service;
 
 namespace challenge.Controller
+    //Author: TallesC Repository async
 {
     [ApiController]
     [Route("api/repositories")]

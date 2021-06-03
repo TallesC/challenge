@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Globalization;
 using System.Text.Json.Serialization;
 
 namespace challenge.Models
-
+    // Author: TallesC - Model to recovery data from GitHub API and integrated with TakeBlip HTTTP Content
 {
     public class Repository
     {

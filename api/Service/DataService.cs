@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text.Json;
 using System.Threading.Tasks;
 using challenge.Models;
 using Newtonsoft.Json.Linq;
@@ -10,10 +9,12 @@ using System.Linq;
 using Newtonsoft.Json;
 
 namespace challenge.Service
+    //Author: TallesC Data management and transform to make a response
 {
     public class DataService
     {
         private static readonly HttpClient client = new HttpClient();
+       //Deserialize and take data from GitHub Api - Take Repo in Created_at asc order.
         public static async Task<String> ProcessRepositories()
         {
             client.DefaultRequestHeaders.Accept.Clear();
@@ -26,6 +27,7 @@ namespace challenge.Service
             return ExtractRepositories(repositories);
         }
 
+        //Filter C# repositories from data extracted
         private static String ExtractRepositories(IList<Repository> repositories) 
         {
             IList<Repository> newRepositories = new List<Repository>();
@@ -47,13 +49,13 @@ namespace challenge.Service
             return SerializeJson(newRepositories);
         }
 
+        //Serialize and make the formated response
         private static String SerializeJson(IList<Repository> repositories)
         {
             String cabecalhoJson = @"{
                 'itemType': 'application/vnd.lime.document-select+json',
                 'items':
                 ";
-
 
             JArray responseArray = new JArray(          
                 
